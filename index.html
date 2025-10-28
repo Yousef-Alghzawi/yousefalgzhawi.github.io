@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" id="meta-desc" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="" id="og-title" />
+  <meta property="og:description" content="" id="og-desc" />
+  <meta property="og:url" content="" id="og-url" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={theme:{extend:{colors:{accent: {DEFAULT:'#4f46e5','50':'#eef2ff','100':'#e0e7ff','200':'#c7d2fe','300':'#a5b4fc','400':'#818cf8','500':'#6366f1','600':'#4f46e5','700':'#4338ca','800':'#3730a3','900':'#312e81'} }},container:{center:true,padding:'1rem'}}}
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    .reveal{opacity:.001;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+    .in-view{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+    .marquee{--gap:3rem;display:flex;overflow:hidden;gap:var(--gap)}
+    .marquee__track{display:flex;gap:var(--gap);animation:scroll 25s linear infinite}
+    .marquee:hover .marquee__track{animation-play-state:paused}
+    @keyframes scroll{to{transform:translateX(calc(-50% - var(--gap)/2))}}
+  </style>
+</head>
+<body class="bg-white text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
+  <!-- =================== HEADER =================== -->
+  <header class="sticky top-0 z-40 bg-white/70 dark:bg-neutral-950/70 backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-neutral-100 dark:border-neutral-800">
+    <div class="container max-w-5xl py-4 flex items-center justify-between">
+      <a href="#top" class="group">
+        <div class="text-lg font-semibold leading-tight group-hover:text-accent-600 transition-colors" id="site-name">Name</div>
+        <div class="text-sm text-neutral-500 dark:text-neutral-400" id="site-role">Role</div>
+      </a>
+      <button aria-label="Toggle menu" class="md:hidden p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900" id="menu-btn">☰</button>
+      <nav id="nav" class="hidden md:block">
+        <ul class="flex items-center gap-6 text-sm" id="nav-links">
+          <li><a href="#about" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">About</a></li>
+          <li><a href="#skills" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">Skills</a></li>
+          <li><a href="#services" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">Services</a></li>
+          <li><a href="#projects" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">Projects</a></li>
+          <li><a href="#pubs" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">Pubs</a></li>
+          <li><a href="#contact" class="hover:text-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded px-1">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mobile-nav" class="md:hidden hidden border-t border-neutral-100 dark:border-neutral-800">
+      <div class="container max-w-5xl py-3">
+        <ul class="grid grid-cols-3 gap-3 text-sm" aria-label="Mobile navigation">
+          <li><a href="#about" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">About</a></li>
+          <li><a href="#skills" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">Skills</a></li>
+          <li><a href="#services" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">Services</a></li>
+          <li><a href="#projects" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">Projects</a></li>
+          <li><a href="#pubs" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">Pubs</a></li>
+          <li><a href="#contact" class="block py-2 rounded hover:bg-neutral-50 dark:hover:bg-neutral-900 text-center">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="">
+    <!-- =================== HERO =================== -->
+    <section class="relative overflow-hidden">
+      <div aria-hidden="true" class="absolute inset-0 -z-10">
+        <div id="parallax" class="h-full w-full bg-gradient-to-b from-accent-50/80 to-transparent dark:from-accent-950/40 transition-transform"></div>
+      </div>
+      <div class="container max-w-5xl py-16 md:py-20 lg:py-24 space-y-6">
+        <p class="text-sm uppercase tracking-wide text-neutral-500 dark:text-neutral-400">Biostatistics • Evidence • Clarity</p>
+        <h1 class="text-3xl md:text-5xl font-semibold leading-tight" id="hero-name">Name</h1>
+        <p class="text-lg text-neutral-600 dark:text-neutral-300" id="hero-role">Role</p>
+        <div class="flex gap-3 pt-2">
+          <a id="btn-cv" href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-accent-600 text-white shadow-md shadow-accent-600/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition">Download CV</a>
+          <a id="btn-email" href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition">Email</a>
+        </div>
+        <div class="flex flex-wrap gap-3 pt-2" id="metrics"></div>
+      </div>
+    </section>
+
+    <!-- ============ PHYSICIANS FROM (LOGOS) ============ -->
+    <section aria-label="Physicians from" class="py-10 border-y border-neutral-100 dark:border-neutral-800">
+      <div class="container max-w-5xl">
+        <div class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">Physicians from</div>
+        <div class="marquee" role="region" aria-label="Organization logos">
+          <div class="marquee__track" id="logo-track"></div>
+          <div class="marquee__track" aria-hidden="true" id="logo-track-dup"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ABOUT =================== -->
+    <section id="about" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">About</h2>
+      <p id="bio" class="text-neutral-700 dark:text-neutral-300"></p>
+      <ul class="flex flex-wrap gap-2 text-sm" aria-label="Niches">
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Survival/Cox</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Logistic</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Bayesian</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Network MA</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Single-arm</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">Questionnaire validation</li>
+        <li class="px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">NHANES/SEER</li>
+      </ul>
+    </section>
+
+    <!-- =================== SKILLS =================== -->
+    <section id="skills" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">Skills</h2>
+      <div id="skills-wrap" class="flex flex-wrap gap-2"></div>
+    </section>
+
+    <!-- =================== SERVICES =================== -->
+    <section id="services" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">Services</h2>
+      <div id="services-wrap" class="grid md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- =================== PROJECTS =================== -->
+    <section id="projects" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">Projects</h2>
+      <div id="projects-wrap" class="grid md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- =================== PUBLICATIONS =================== -->
+    <section id="pubs" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">Publications</h2>
+      <ul id="pubs-list" class="space-y-3"></ul>
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section id="contact" class="container max-w-5xl py-16 space-y-6 reveal">
+      <h2 class="text-2xl font-semibold">Contact</h2>
+      <div class="flex flex-wrap items-center gap-4">
+        <a id="cta-email" href="#" class="inline-flex items-center px-4 py-2 rounded-2xl bg-accent-600 text-white shadow-md shadow-accent-600/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition">Email Me</a>
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">Or send a quick note:</p>
+      </div>
+      <form id="contact-form" class="grid gap-3 max-w-xl" novalidate>
+        <label class="block">
+          <span class="sr-only">Name</span>
+          <input id="f-name" type="text" required placeholder="Your name" class="w-full px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+        </label>
+        <label class="block">
+          <span class="sr-only">Email</span>
+          <input id="f-email" type="email" required placeholder="you@email.com" class="w-full px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+        </label>
+        <label class="block">
+          <span class="sr-only">Message</span>
+          <textarea id="f-msg" required rows="4" placeholder="How can I help?" class="w-full px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 focus:outline-none focus:ring-2 focus:ring-accent-500"></textarea>
+        </label>
+        <button type="submit" class="justify-self-start inline-flex items-center px-4 py-2 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition">Send</button>
+        <p id="form-hint" class="text-sm text-neutral-600 dark:text-neutral-400"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="border-t border-neutral-100 dark:border-neutral-800">
+    <div class="container max-w-5xl py-8 flex items-center justify-between text-sm">
+      <span id="copyright">©</span>
+      <div class="flex items-center gap-4">
+        <a id="lnk-li" href="#" class="hover:text-accent-600" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="lnk-gh" href="#" class="hover:text-accent-600" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================== SCRIPT (EDIT DATA HERE) =================== -->
+  <script>
+  // EDIT HERE
+  const DATA = {
+    name: "Yousef Alghzawi",
+    role: "Biostatistician & Clinical Data Analyst",
+    email: "yaalghzawi23@med.just.edu.jo",
+    cvUrl: "#",
+    metaDescription: "Biostatistician & clinical data analyst: survival/Cox, logistic, Bayesian, meta-analyses.",
+    metrics: ["209 cases analyzed","15 studies","7 datasets"],
+    logos: ["assets/JUST.png","assets/KAUH.png","assets/KHCC.png"],
+    bio: "I help clinical teams turn messy data into clear, defensible evidence.",
+    skills: ["R","SPSS","Python","SQL","Excel/Power Query","tidyverse","metafor"],
+    services: ["Study design","Data cleaning","Modeling (Cox/Logistic)","Meta-analysis","Tables & figures"],
+    projects: [
+      {title:"Limb Ischemia Outcomes",link:"#",tags:["Cox","SPSS"]},
+      {title:"Network Meta-Analysis",link:"#",tags:["Bayesian"]}
+    ],
+    publications: [
+      {title:"TMVR LVOTO Prevention Meta-analysis",venue:"JACC TCT25",link:"#",role:"First author"}
+    ],
+    social:{linkedin:"#",github:"#"}
+  };
+
+  // Head/SEO
+  document.title = `${DATA.name} — ${DATA.role}`;
+  const url = location.href;
+  document.getElementById('meta-desc').content = DATA.metaDescription;
+  document.getElementById('og-title').content = document.title;
+  document.getElementById('og-desc').content = DATA.metaDescription;
+  document.getElementById('og-url').content = url;
+  const ld = {"@context":"https://schema.org","@type":"Person",name:DATA.name,jobTitle:DATA.role,email:DATA.email,sameAs:[DATA.social.linkedin,DATA.social.github].filter(Boolean)};
+  const ldS=document.createElement('script');ldS.type='application/ld+json';ldS.textContent=JSON.stringify(ld);document.head.appendChild(ldS);
+
+  // Header/Hero
+  const byId=s=>document.getElementById(s);
+  byId('site-name').textContent=DATA.name;byId('site-role').textContent=DATA.role;
+  byId('hero-name').textContent=DATA.name;byId('hero-role').textContent=DATA.role;
+  byId('btn-cv').href=DATA.cvUrl;byId('btn-email').href=`mailto:${DATA.email}`;
+  byId('cta-email').href=`mailto:${DATA.email}`;
+  const metrics=byId('metrics');DATA.metrics.forEach(m=>{const b=document.createElement('span');b.className='px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-sm';b.textContent=m;metrics.appendChild(b)});
+
+  // Logos marquee
+  const mkLogo=(src)=>{const i=new Image();i.src=src;i.loading='lazy';i.alt='Physician affiliation logo';i.className='h-10 w-auto opacity-80 hover:opacity-100 transition';return i};
+  const track=byId('logo-track'),dup=byId('logo-track-dup');
+  const logos=[...DATA.logos,...DATA.logos];logos.forEach((l,idx)=>{(idx<DATA.logos.length?track:dup).appendChild(mkLogo(l))});
+
+  // About
+  byId('bio').textContent=DATA.bio;
+
+  // Skills
+  const sWrap=byId('skills-wrap');DATA.skills.forEach(s=>{const a=document.createElement('span');a.title=s;a.textContent=s;a.className='px-3 py-1 rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-sm hover:-translate-y-0.5 hover:shadow transition';sWrap.appendChild(a)});
+
+  // Services
+  const sv=byId('services-wrap');DATA.services.forEach(text=>{const c=document.createElement('article');c.className='p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/70 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition';c.innerHTML=`<h3 class="font-medium mb-2">${text}</h3><p class="text-sm text-neutral-600 dark:text-neutral-400">Concise, reproducible deliverables with clear statistical justifications.</p>`;sv.appendChild(c)});
+
+  // Projects
+  const pw=byId('projects-wrap');DATA.projects.forEach(p=>{const c=document.createElement('article');c.className='overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white/70 dark:bg-neutral-950/70 shadow-sm hover:shadow-md transition';
+    c.innerHTML=`<div class=\"h-32 bg-gradient-to-br from-accent-100 to-accent-50 dark:from-accent-900/40 dark:to-transparent\"></div>
+      <div class=\"p-4 space-y-2\">
+        <h3 class=\"font-medium\">${p.title}</h3>
+        <p class=\"text-sm text-neutral-600 dark:text-neutral-400\">Methods: ${p.tags.join(', ')}</p>
+        <div class=\"flex flex-wrap gap-2\">${p.tags.map(t=>`<span class='px-2 py-0.5 text-xs rounded-full bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800'>${t}</span>`).join('')}</div>
+        <a class=\"inline-flex items-center px-3 py-1.5 rounded-xl bg-accent-600 text-white text-sm hover:-translate-y-0.5 hover:shadow transition\" target=\"_blank\" rel=\"noopener\" href=\"${p.link}\">Open</a>
+      </div>`;pw.appendChild(c)});
+
+  // Publications
+  const pl=byId('pubs-list');DATA.publications.forEach(p=>{const li=document.createElement('li');
+    const base=`${p.title} — ${p.venue}${p.year?(' '+p.year):''} — ${p.role||''}`;
+    li.innerHTML=p.link?`<a class='hover:text-accent-600 underline-offset-4 hover:underline' target='_blank' rel='noopener' href='${p.link}'>${base}</a>`:base;
+    pl.appendChild(li)});
+
+  // Footer
+  byId('copyright').textContent = `© ${new Date().getFullYear()} ${DATA.name}`;
+  byId('lnk-li').href=DATA.social.linkedin||'#';
+  byId('lnk-gh').href=DATA.social.github||'#';
+
+  // Mobile nav
+  const mbtn=byId('menu-btn'),mnav=byId('mobile-nav');
+  mbtn.addEventListener('click',()=>{mnav.classList.toggle('hidden')});
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.add('hidden')));
+
+  // Intersection reveal
+  const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced){const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target)}})},{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}
+  else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
+
+  // Active nav highlight
+  const navMap=[['about','#about'],['skills','#skills'],['services','#services'],['projects','#projects'],['pubs','#pubs'],['contact','#contact']];
+  const linkById={};document.querySelectorAll('#nav a').forEach(a=>{linkById[a.getAttribute('href')]=a});
+  const secObs=new IntersectionObserver((entries)=>{entries.forEach(ent=>{if(ent.isIntersecting){const href='#'+ent.target.id;Object.values(linkById).forEach(l=>l.classList.remove('text-accent-600'));if(linkById[href])linkById[href].classList.add('text-accent-600')}})},{rootMargin:'-40% 0px -55% 0px'});
+  navMap.forEach(([_,sel])=>{const s=document.querySelector(sel);if(s)secObs.observe(s)});
+
+  // Parallax
+  const px=byId('parallax');const onScroll=()=>{const y=window.scrollY*0.15;px.style.transform=`translateY(${y}px)`};
+  if(!prefersReduced){addEventListener('scroll',onScroll,{passive:true})}
+
+  // Form validation (mailto compose)
+  const form=byId('contact-form'),hint=byId('form-hint');
+  form.addEventListener('submit',(e)=>{e.preventDefault();hint.textContent='';const n=byId('f-name'),em=byId('f-email'),msg=byId('f-msg');
+    if(!n.value.trim()||!em.validity.valid||!msg.value.trim()){hint.textContent='Please provide name, valid email, and message.';hint.className='text-sm text-red-600';return}
+    const subj=encodeURIComponent(`Inquiry from ${n.value}`);
+    const body=encodeURIComponent(`${msg.value}\n\n— ${n.value} (${em.value})`);
+    location.href=`mailto:${DATA.email}?subject=${subj}&body=${body}`;
+  });
+  </script>
+</body>
+</html>
+
